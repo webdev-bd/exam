@@ -31,10 +31,6 @@ class Administrator extends CI_Controller {
     }
 
     private function setup($data=array()) {
-         date_default_timezone_set('America/Los_Angeles');
-                checkdate(2,29,2004);
-            die;
-            
         if (!$this->session->userdata('back_session_admin')) {
             redirect('administrator', 'refresh');
         }
