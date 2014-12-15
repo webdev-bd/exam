@@ -1,0 +1,121 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800|Roboto|Raleway);
+
+body{background:  url("../../images/pagebg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);}
+#header, #HomeSlider, #HomeBox, #whatsNew{ padding: 0;}
+.red{ color: #ff622b !important;}
+.fullWidht{ width: 100%; clear: both;}
+a, input{ outline: none !important;}
+
+.header-bg{ background: #fff; padding-bottom: 20px;}
+#header .logo{ margin: 30px 0 0 0; padding: 0;}
+#header .HeadSearchMenu{ margin: 20px 0 0 0; padding: 0;}
+.HeadSearchBtn {  background: url("../../images/searchIcon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);  border: medium none;  position: absolute;  right: 8px;  top: 8px;  width: 32px;}
+.headSearch {  position: relative;}
+.headMenu ul {  margin: 5px 0 15px;  padding: 0;}
+.headMenu ul li { list-style-type: none; display: inline-block; }
+.headMenu ul li a{ color: #909090; font-size: 12px; margin-right: 5px; padding-left: 5px; border-left: 1px solid #ddd;}
+.headMenu ul li a:hover{ color: #000; text-decoration: none;}
+.headMenu ul li:first-child a{ border: none; padding: 0;}
+#header .HeadCartNumber{ margin: 28px 0 0 0; padding: 0;}
+.HeadCartNumber h2 {  background: url("../../images/phoneIcon.png") no-repeat scroll 0 5px rgba(0, 0, 0, 0);  float: right;  font-size: 22px;  margin: 0 0 18px;  padding-left: 20px;}
+.CartHead {  float: right;  font-size: 14px;  font-weight: bold;  text-align: right;  width: 100%;}
+.cartIcon {  background: url("../../images/cartIcon.png") no-repeat scroll 0 5px rgba(0, 0, 0, 0);  color: #ff622b;  padding: 5px 0 5px 30px;}
+
+.menu-bg{ background: #0d0d0d; width: 100%;  padding: 0;}
+#MainMenu { padding: 0;}
+.navbar-default { background: none; border: none; }
+#MainMenu nav {  margin: 0;}
+#MainMenu ul.nav.navbar-nav {  height: 58px;}
+.HomeIcon{ background: url("../../images/homeIcon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0); margin-top: 20px !important;}
+.HomeIcon:hover{ background: url("../../images/homeIcon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;}
+#MainMenu ul li a {  color: #fff;  font-size: 15px;  margin: 0 3px;  padding: 19px 15px;  font-family: 'Roboto', sans-serif;}
+#MainMenu ul li a:hover, #MainMenu ul li.open a{ background: #ff622b;}
+#MainMenu .dropdown-menu{  background: url("../../images/menuDorpBG.png") repeat scroll 0 0 rgba(0, 0, 0, 0) !important;}
+#MainMenu .dropdown-menu li a{ background: none !important; padding: 5px;}
+#MainMenu .dropdown-menu li a:hover{ color: #ff622b;}
+
+.homepage-bg {  min-height: 600px;}
+.HomeSlider-bg{ background:  url("../../images/sliderBG.png") repeat scroll 0 0 rgba(0, 0, 0, 0); }
+#HomeSlider{ height: 430px;} 
+#HomeBox > img {  background: none repeat scroll 0 0 #fff;  border: 1px solid #ddd;  box-shadow: 0 0 1px #ddd;  margin: 15px 20px 15px 0;  padding: 9px;}
+#HomeBox > img:last-child {  margin: 0;}
+
+.home_title {  border-bottom: 1px solid #c5c5c5;  margin-bottom: 15px;  padding-bottom: 3px;  font-family: 'Raleway', sans-serif; text-transform: uppercase;}
+.product_item {  background: none repeat scroll 0 0 #fff;  border: 1px solid #ddd;  display: inline-block;  margin: 0 5px 15px;  padding: 7px 0;  text-align: center; width: 278px;}
+.gridText{ margin: 10px 0 20px; border-top: 1px solid #e1e1e1;}
+.gridText > h3 {  color: #000;  font-size: 18px;  font-family: 'Open Sans', sans-serif;  margin: 15px 0 0 0;}
+.gridText > h4 {  color: #ff622b;  font-weight: bold;  font-size: 18px;  font-family: 'Open Sans', sans-serif;  margin: 10px 0 15px;}
+.gridText > a {  color: #000;  font-size: 14px;  font-family: 'Open Sans', sans-serif;  padding: 5px 20px;  border: 1px solid #999; margin: 0;}
+.gridText > a:hover{ color: #fff; background: #000; text-decoration: none;}
+
+footer{ background: #000;}
+.footerBlack, .boxFooter{ padding: 0;}
+.boxFooter > h4{     font-family: 'Open Sans', sans-serif;     color: #fff;     font-size: 20px;     font-weight: 800;     margin: 30px 0 15px;}
+.boxFooter > ul {  border-top: 1px solid #202020;  padding: 10px 0 0;  width: 90%;}
+.boxFooter > ul li{ list-style-type: none; background: url("../../images/liIcon.png") no-repeat scroll 0 center rgba(0, 0, 0, 0); padding-left: 10px;     line-height: 25px;}
+.boxFooter > ul li a{   font-family: 'Open Sans', sans-serif; font-size: 13px; color: #626161;}
+
+.FooterContactIcon {  background: url("../../images/contactIcon.png") no-repeat scroll 0 center rgba(0, 0, 0, 0) !important;  text-indent: 15px;}
+.FooterPhoneIcon {  background: url("../../images/phoneIcon.png") no-repeat scroll 0 5px rgba(0, 0, 0, 0)!important;  text-indent: 15px;}
+.MailIcon {  background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;  padding: 0 !important;}
+.MailIcon a{background: url("../../images/mailIcon.png") no-repeat scroll 0 center rgba(0, 0, 0, 0)!important; padding-left:  25px;}
+
+.footerRed{ background: #ff622b; width: 100%; min-height: 60px; padding-top: 6px;}
+#FooterBottom, .copyRight { padding: 0; }
+.copyRight{ color: #fff; font-family: Arial; font-size: 13px; padding-top: 15px;}
+.FooterSocial{ text-align: center;}
+.FooterBank {  margin-top: 8px;}
+.facebookIcon {  background: url("../../images/fb.png") no-repeat scroll 0 center rgba(0, 0, 0, 0);  display: inline-block;  height: 44px;  width: 44px;  margin-right: 5px;}
+.twitterIcon{ background: url("../../images/twitter.png") no-repeat scroll 0 center rgba(0, 0, 0, 0); display: inline-block;  height: 44px;  width: 44px;}
+.FooterBank img{ float: right;}
+
+
+.breadcrumbs {border-bottom: 1px solid #ff622b; margin: 20px 0 15px;}
+.breadcrumbs ul{ padding: 0;}
+.breadcrumbs ul li {  display: inline;  font-family: "Open Sans",sans-serif;  font-size: 14px;  list-style-type: none;  color: #000;  background: url("../../images/bradIcon.png") no-repeat scroll right center rgba(0, 0, 0, 0);   padding-right: 15px;  margin-right: 5px;}.breadcrumbs ul li:last-child{ background: none;}
+.breadcrumbs ul li a {  color: #adadad;  font-style: italic;  font-family: "Open Sans",sans-serif;  font-size: 14px;  list-style-type: none;}
+
+
+#SingleContainer{ padding: 0; margin: 30px 0 40px;}
+.singleLeft{ min-width: 300px; float: left;}
+.singleZoomBox { padding: 5px; border: 1px solid #d5d5d5;}
+.singleLeft ul#thumblist {  margin: 15px 0;  padding: 0;}
+#thumblist > li {  display: inline-block;  list-style-type: none;}
+#thumblist li:last-child a{ margin-right: 0;}
+#thumblist li a {  border: 3px solid #d5d5d5;  display: block;  margin-right: 8px;}
+#thumblist li a.zoomThumbActive{border: 3px solid #ff622d;}
+
+.singleRight {  float: left;  margin: 0 30px;  width: 500px;}
+.singleRight h1{ margin: 0; font-family: 'Roboto', sans-serif; font-size: 24px; color: #ff622b; border-bottom: 3px solid #c4c4c4; padding-bottom: 10px; margin-bottom: 5px; text-transform: uppercase;}
+.singleRight .ShortDiscription{ margin: 15px 0; font-family: "Open Sans",sans-serif;  font-size: 14px; color: #4d4d4d; text-align: justify;  border-bottom: 1px solid #c4c4c4; padding-bottom: 10px;}
+
+.code, .avail{font-family: "Open Sans",sans-serif; font-size: 14px; color: #666565; }
+.code span, .avail span{  color: #ff622b; }
+.PriceAddCart { margin: 15px 0; }
+.PriceAddCart h3 {  color: #ff622b;  float: left;  font-family: "Open Sans",sans-serif;  font-size: 26px;  margin-right: 40px;}
+.PriceAddCart a.AddToCart {  background: none repeat scroll 0 0 #202020;  color: #fff;  float: left;  font-family: "Open Sans",sans-serif; font-size: 16px;  margin-top: 15px;  padding: 8px 12px;  text-transform: uppercase;  float: right;}
+.PriceAddCart a.AddToCart:hover{ text-decoration: none; color: #ff622b; }
+
+
+
+
+h3.right_title {  border-bottom: 3px solid #c4c4c4;  color: #ff622b;  font-family: "Roboto",sans-serif;  font-size: 24px;  margin: 30px 0 25px;  padding-bottom: 10px;  text-transform: uppercase;  }
+.RightProductItem {  background: none repeat scroll 0 0 #fff;  border: 1px solid #dadada;  margin-bottom: 20px;  padding: 10px;  width: 100%;  float: left;}
+.RightProductImg {  float: left;  margin-right: 10px;}
+.RightProductImg > img {  width: 80px;}
+.RightProductText {  float: left;}
+.RightProductText > h3 {   font-family: "Roboto",sans-serif;  font-size: 16px; margin: 0 0 5px;}
+.RightProductText > h4 {   font-family: "Roboto",sans-serif;  font-size: 16px; color: #ff622b;}
+.RightProductText > a {   font-family: "Open Sans",sans-serif; font-size: 14px; margin:10px 0 0; padding: 3px 12px; border: 1px solid #bcbcbc; color: #343434;}
+
+
+
+h3.sResult {  color: #666;  font-style: italic;  margin-left: 50px;  font-family: "Open Sans",sans-serif; }
+
+
+
+.login {
+  margin: 30px auto;
+  width: 300px;
+}
+
