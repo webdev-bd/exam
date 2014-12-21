@@ -5,10 +5,12 @@ class Administrator extends CI_Controller {
     public function index() {
         $this->login();
     }
+    public $login_user ;
     function __construct()
     {
         parent::__construct();
         $this->load->model('mo_admin');
+        $this->login_user = $this->session->userdata('back_session_admin');
     }
 
     private function setup_admin() {
@@ -21,7 +23,6 @@ class Administrator extends CI_Controller {
         if ($session->au_status != 9) {
             $this->logout();
         }
-
         $data = array();
         $data['header'] = $this->load->view('back/include/head', $data, TRUE);
         $data['main_menu'] = $this->load->view('back/include/main_menu', $data, TRUE);
@@ -137,11 +138,52 @@ class Administrator extends CI_Controller {
         $data = $this->setup(array('title' => 'Single Queston'));
         $data['question'] = $this->mo_admin->getSingleQuestion($id);
         $data['answers'] = $this->mo_admin->getAnswers($id);
+        if ($this->login_user->status == 9) {
+            $data['duplicate_que'] = $this->mo_admin->duplicateQue($data['question']);
+        }
+        
         $data['page'] = $this->load->view('back/queston/single', $data, TRUE);
         $this->load->view('container', $data);
     }
+    public function publish($id){
+        $this->mo_admin->publish($id);
+        redirect("administrator/view_question");
+    }
+    
     
 
+//**************   Bank   *************************    
+    
+    public function bank() {
+        $data = $this->setup(array('title' => 'Bank'));
+        $data['questions'] = $this->mo_admin->getQuestion(1);
+        $data['page'] = $this->load->view('back/queston/view', $data, TRUE);
+        $this->load->view('container', $data);
+    }
+    
+//**************   Practice   *************************    
+    
+    public function practice() {
+        $data = $this->setup(array('title' => 'Practice'));
+        $data['question'] = $this->mo_admin->getPracticeQue();
+        $data['answers'] = $this->mo_admin->getAnswers($data['question']->id);
+
+        $data['page'] = $this->load->view('back/practice', $data, TRUE);
+        $this->load->view('container', $data);
+    }
+    public function practice_check() {
+        $answers = $this->mo_admin->getPracticeCheck($this->input->post('id'));
+        $html ='';
+        foreach ($answers as $item):
+                $right = ($item->id==$this->input->post('ans')) ? 'border: 1px solid red; color:green;'  : '';
+                $right = ($item->status==1) ? 'border: 1px solid green;'  : $right;
+                $html .="<li class='practiceAns' style='cursor: default; {$right}'>{$item->answer}</li>";
+        endforeach;      
+        echo $html;
+    }
+    
+    
+    
 //**************   Answer  *************************    
     
     public function answers($id=NULL) {

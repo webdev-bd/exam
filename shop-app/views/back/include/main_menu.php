@@ -23,10 +23,12 @@ if($session){ ?>
         <li> <a <?php echo (isset($title) && $title=='New Queshion') ? 'class="active"' : '';?> href="<?php echo base_url()?>administrator/new_question"> <i class="fa fa-send"></i> <span>New Question</span> </a> </li>
         <li> <a <?php echo (isset($title) && $title=='View Queshion') ? 'class="active"' : '';?> href="<?php echo base_url()?>administrator/view_question"> <i class="fa fa-send"></i> <span>View Question</span> </a> </li>
         <li> <a <?php echo (isset($title) && $title=='Category') ? 'class="active"' : '';?> href="<?php echo base_url()?>administrator/category"> <i class="fa fa-send"></i> <span>Category</span> </a> </li>
+        <li> <a <?php echo (isset($title) && $title=='Practice') ? 'class="active"' : '';?> href="<?php echo base_url()?>administrator/practice"> <i class="fa fa-send"></i> <span>Practice</span> </a> </li>
       <?php 
         $user=$this->session->userdata('back_session_admin');
         if($user->status==9):
       ?>
+        <li> <a <?php echo (isset($title) && $title=='Bank') ? 'class="active"' : '';?> href="<?php echo base_url()?>administrator/bank"> <i class="fa fa-send"></i> <span>Bank</span> </a> </li>
       <?php endif;?>
  
       

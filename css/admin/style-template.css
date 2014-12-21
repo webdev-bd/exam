@@ -7,7 +7,7 @@ html, body {
 	height: 100%;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 100;
-	background: #efefef;
+	background: beige;
 	color: #424a4d;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -3013,3 +3013,14 @@ div[data-role="editor-toolbar"] {
 }.addQueBtn:hover{ text-decoration: none !important;}
 .header_icon{ color: #ff482e; font-size: 18px;}
 .removeQueBtnFormbd{ cursor: pointer; }
+
+
+.practice { list-style-type: none; padding: 0;}
+.practice li {
+    margin: 15px 0px;
+    border: 1px solid #ccc;
+    padding: 5px 5px 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.practice li:hover{ border-color: #A9AD28;}

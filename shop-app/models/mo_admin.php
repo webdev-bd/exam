@@ -40,10 +40,10 @@
     }
     
     
-    public function getQuestion(){
+    public function getQuestion($status = 0){
         $this->db->select('*');
         $this->db->from('questions');
-        $this->db->where('user_id', $this->getLoginID());
+        $this->db->where('status', $status);
         $this->db->order_by('id', 'DESC');
         $query_result = $this->db->get();
         return $query_result->result();
@@ -55,6 +55,33 @@
         $query_result = $this->db->get();
         return $query_result->row();
     }    
+//    Duplicate Que
+    public function duplicateQue($data){
+        $this->db->select('*');
+        $this->db->from('questions');
+        $this->db->like('title', $data->title);
+        $this->db->where('status', 1);
+        $this->db->limit(5);
+        $query_result = $this->db->get();
+        return $query_result->result();
+    }
+    public function publish($id){
+        $this->db->set('status', 1);
+        $this->db->where('id', $id);
+        $this->db->update('questions');
+    }
+    
+// Practice
+    public function getPracticeQue(){
+        $this->db->select('*');
+        $this->db->from('questions');
+        $this->db->where('status', 1);
+        $this->db->order_by('id', 'random');
+        $query_result = $this->db->get();
+        return $query_result->row();
+    }
+    
+    
     
 // ----------    Answer     ----------------    
     
@@ -162,5 +189,13 @@
         return $newAmount;
     }
  
+    public function getPracticeCheck($que){
+        $this->db->select('*');
+        $this->db->from('answers');
+        $this->db->where('question_id', $que);
+        $query_result = $this->db->get();
+        return $query_result->result();
+    }
+    
     
 }// mo_admin
