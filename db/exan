@@ -1,0 +1,90 @@
+/*
+SQLyog Ultimate v11.11 (64 bit)
+MySQL - 5.6.21 : Database - exam
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`exam` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `exam`;
+
+/*Table structure for table `answers` */
+
+DROP TABLE IF EXISTS `answers`;
+
+CREATE TABLE `answers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `question_id` int(11) NOT NULL,
+  `answer` text,
+  `status` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`,`question_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=122 DEFAULT CHARSET=latin1;
+
+/*Data for the table `answers` */
+
+insert  into `answers`(`id`,`question_id`,`answer`,`status`) values (1,1,'1',0),(2,1,'a=1',0),(3,1,'0',0),(4,1,'No value',1),(5,2,'HELLO WORLD',1),(6,2,'nothing',0),(7,2,'its a compiler error, the code won\'t run',0),(8,2,'hello world!',0),(9,3,'true',1),(10,3,'false',0),(11,4,'true',0),(12,4,'false',1),(13,5,'true',1),(14,5,'false',0),(15,6,'1',0),(16,6,'2',1),(17,6,'3',0),(18,6,'Nothing',0),(19,7,'2',0),(20,7,'3',1),(21,7,'4',0),(22,7,'5',0),(23,7,'Will show Error.',0),(24,8,'1',0),(25,8,'2',1),(26,8,'its a compiler error, the code won\'t run',0),(27,9,'Using the strpos function',0),(28,9,'Using the == operator',1),(29,9,'Using strcasecmp()',0),(30,9,'Using strcmp()',1),(31,10,'*',0),(32,10,'..|.....',0),(33,10,'\\d{3}\\|\\d{8}',0),(34,10,'[az]{3}\\|[az]{9}',0),(35,10,'[a-z][a-z][a-z]\\|w{9}',0),(36,11,'The interpreter outputs a type mismatch error',0),(37,11,'The string is converted to a number and added to the integer',1),(38,11,'both of above',0),(39,11,'None of above',0),(40,12,'may 19,09,2:45:32 PM',0),(41,12,'May 19, 2009, 2:45 pm',0),(42,12,'May 19,2009, 14:45:32 pm',1),(43,12,'May 19,2009,14:45:32 PM',0),(44,13,'bool function_exists(functionname)',1),(45,13,'bool f_exists(functionname)',0),(46,13,'bool func_exist(functioname)',0),(47,14,'shows the IP address of the local system',0),(48,14,'shows the IP address of visitor',1),(49,14,'shows the IP address of the webserver',0),(50,14,'None of the above',0),(51,15,'1',1),(52,15,'0',0),(53,15,'Quality',0),(54,15,'Null',0),(55,16,'211',0),(56,16,'214',1),(57,16,'123',0),(58,16,'Syntex Error',0),(59,17,'bool (true)',0),(60,17,'bool (false)',1),(61,17,'Parser Error',0),(62,17,'NULL',0),(63,18,'A Scalar ',0),(64,18,'An expression',0),(65,18,'A booleam',0),(66,18,'All of the above',1),(67,19,'0',0),(68,19,'An integer overflow error',0),(69,19,'A warning becouse X1is not set',0),(70,19,'A warning becouse X2 is not set',1),(71,20,'Use a Select list that lets the user Choose between yes and no.',0),(72,20,'Enable the_safe _mode configuration direction.',0),(73,20,'Use a hidden field that has a value of yes or no.',0),(74,20,'None of above',1),(75,21,'echo $test(3);',0),(76,21,'echo $test[2];',1),(77,21,'echo (2);',0),(78,21,'echo {2};',1),(79,21,'echo $test{3};',0),(80,22,'They have global Scope',0),(81,22,'They have local scope only ',0),(82,22,'They have both global and local scope',1),(83,22,'None of above',0),(84,23,'ONE',0),(85,23,'THREETHREE',0),(86,23,'THREE',0),(87,23,'FOUR',1),(88,24,'$_POST',0),(89,24,'$_SESSION',0),(90,24,'$_GET',0),(91,24,'$_SERVER',1),(92,25,'1',0),(93,25,'3',0),(94,25,'5',1),(95,25,'20',0),(96,25,'7',0),(97,26,'zceappend',0),(98,26,'prependzceappend',0),(99,26,'prependzce',1),(100,26,'zce',0),(101,27,'22',0),(102,27,'22.2231',1),(103,27,'22.2,231',0),(104,27,'56.2',0),(105,28,'abc',0),(106,28,'cd',1),(107,28,'d',0),(108,28,'Syntex Error',0),(109,29,'1,2,3,4,5,6,7,8,9,',0),(110,29,'1,2,3,4,5,6,7,8,9,10,',0),(111,29,'1,2,3,5,8,13,21,34,55,89',0),(112,29,'1,1,1,1,1,1,1,1,1,1,',1),(113,30,'4',1),(114,30,'3',0),(115,30,'5',0),(116,30,'0',0),(117,30,'1',0),(118,31,'There is no difference.',0),(119,31,'Print return true or false and echo does not.',1),(120,31,'Print is a function and echo is keyword',0),(121,31,'None of above',0);
+
+/*Table structure for table `categorys` */
+
+DROP TABLE IF EXISTS `categorys`;
+
+CREATE TABLE `categorys` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) DEFAULT '1',
+  `name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+/*Data for the table `categorys` */
+
+insert  into `categorys`(`id`,`parent_id`,`name`) values (1,0,'PHP'),(2,1,'PHP Basics'),(3,1,'Functions'),(4,1,'Data Format & Types'),(5,1,'Web Features'),(6,1,'OPP'),(7,1,'Security'),(8,1,'I/O'),(9,1,'Strings & Patterns'),(10,1,'Databases & SQL'),(11,1,'Arrays');
+
+/*Table structure for table `questions` */
+
+DROP TABLE IF EXISTS `questions`;
+
+CREATE TABLE `questions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `title` text,
+  `question` text,
+  `category` int(11) DEFAULT NULL,
+  `create_date` date DEFAULT NULL,
+  `status` int(1) DEFAULT '0',
+  PRIMARY KEY (`id`,`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+
+/*Data for the table `questions` */
+
+insert  into `questions`(`id`,`user_id`,`title`,`question`,`category`,`create_date`,`status`) values (1,1,'What value is printed for \"a\" below','$a=1;\r\n function Test()\r\n {\r\n        echo \"a =$a\";\r\n }\r\nTest();',2,'2014-11-17',1),(2,1,'What will be printed by the code below?','&lt;?php\r\nFUNCTION TEST()\r\n{\r\n   ECHO \"HELLO WORLD\";\r\n}\r\ntest();\r\n?&gt;',2,'2014-11-17',1),(3,1,'What gets printed?','&lt;?php\r\n    $var = \'false\';\r\n    if($var){\r\n        echo \'true\';\r\n    }else{\r\n        echo \'false\';\r\n    }\r\n?&gt;',2,'2014-11-17',1),(4,1,'What will be printed?','&lt;?php\r\n    $var = 0;\r\n    if($var){\r\n        echo \'true\';\r\n    }else{\r\n        echo \'false\';\r\n    }\r\n?&gt;',2,'2014-11-17',1),(5,1,'What will be printed?','&lt;?php\r\n    $a = array();\r\n    if($a == NULL){\r\n        echo \'true\';\r\n    }else{\r\n        echo \'false\';\r\n    }\r\n?&gt;',2,'2014-11-17',1),(6,1,'What will be the value of $var below?','&lt;?php\r\n    $var = true ? \'1\' : false ? \'2\' : \'3\';\r\n    echo $var;\r\n?&gt;',2,'2014-11-17',1),(7,1,'What will be printed?','&lt;?php\r\n    $a = array(\r\n        null => \'a\',\r\n        true => \'b\',\r\n        false => \'c\',\r\n        0 => \'d\',\r\n        1 => \'e\',\r\n        \'\' => \'f\'\r\n    );\r\n    echo count($a), \"\\n\";\r\n?&gt;',2,'2014-11-17',1),(8,1,'What will be printed by the below code?','&lt;?php\r\n    $a =1;\r\n    {\r\n        $a =2; \r\n    }\r\n    echo $a;\r\n?&gt;',2,'2014-11-17',1),(9,1,'What is the best all-purpose way of comparing two strings?','',2,'2014-11-17',1),(10,1,'Which of the following PCRE regular expressions best matches the string php | architect?','',2,'2014-11-17',0),(11,1,'What happens if you add a string to an integer using the + operator?','',2,'2014-11-17',1),(12,1,'What will be the output of below code?','Assume that today is 2009-5-19:2:45:32 pm\r\n\r\necho $today = date(\"F j, Y, g:i a\");',2,'2014-11-17',0),(13,1,'Which of the following is used to check if a function has already been defined?','',2,'2014-11-17',1),(14,1,'echo $_SERVER[\'REMOTE_ADDR\'];','',2,'2014-11-17',0),(15,1,'What is the output?','\r\n    $qpt = \'QualityPointTechnologies\';\r\n    echo preg_match(\"/^Quallty/\", $qpt);\r\n ',2,'2014-11-17',0),(16,1,'What is the output of the folowing code?','echo \'1\' . (print \'2\') + 3;\r\n',2,'2014-11-23',1),(17,1,'What is the result of the following code?','$a = 1;\r\n$b = \"1\";\r\nvar_dump($a === $b);',2,'2014-11-23',1),(18,1,'Which of the following may be used in Conjunction with CASE inside a SWITCH statement?','',2,'2014-11-23',1),(19,1,'What is the output of the following script?','function rotio ($x1 = 10, $x2){\r\n   if( isset($x2)){\r\n      return $x2 / $x1;\r\n   }\r\n}\r\necho ration (0);',2,'2014-11-23',1),(20,1,'Which of the following techniques ensures that a value submitted in a form can only be yes or no?','',2,'2014-11-23',1),(21,1,'You want to assess the 3rd character of a string. contained in the variable $test.','',2,'2014-11-23',1),(22,1,'Do constants have global scope?','',2,'2014-11-23',1),(23,1,'Out put of the following code?','$a = 3;\r\nSwitch ($a) {\r\n          case 1 :  echo \'ONE\' ; break;\r\n          case 2 :  echo \'TWO\' ; break;\r\n          default  : echo \'Three\' ; break;\r\n          case 3 :  echo \'FOUR\' ; break;\r\n}\r\n',2,'2014-11-23',1),(24,1,'Which of the following superglobals does not contain data from the client?','',2,'2014-11-23',1),(25,1,'What is the output of the following code?','echo \"1\" + 2 * \"0x02\";',2,'2014-11-23',0),(26,1,'What is the output of the following code?','function append ($str){\r\n   $str = $str . \'append\';\r\n}\r\nfunction prepend (&$str) {\r\n   $str = \'prepend\' . $str;\r\n}\r\n$string = \'zce\';\r\nappend( prepend($string));\r\necho $string;',2,'2014-11-23',1),(27,1,'What is the output of the following code?','echo \'22\' + \'0.2\', 23 . 1;\r\n',2,'2014-11-23',1),(28,1,'What is the output of the following code?','$a = \'a\'; \r\n$b = \'b\';\r\necho isset($c) ? $a.$b.$c : ($c = \'c\'). \'d\';',2,'2014-11-23',1),(29,1,'What is the output of the following code?','function fibnacci ($x1, $x2){\r\n     return $x + $x2;\r\n}\r\n\r\n$x1 = 0;\r\n$x2 = 1;\r\n\r\nfor ($i = 0; $i < 10; $i++ ){\r\n    echo fibnacci ($x1, $x2) . \',\' ;\r\n}',2,'2014-11-23',1),(30,1,'What is the output of the following code?','$a =1;\r\n++$a;\r\n$a*=$a;\r\necho $a--;',2,'2014-11-23',1),(31,1,'What is the difference between print and echo ?','',2,'2014-11-23',1),(32,1,'What tag\'s can always be used to begin a PHP script','',2,'2014-11-23',0);
+
+/*Table structure for table `users` */
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(20) DEFAULT NULL,
+  `user_password` varchar(64) DEFAULT NULL,
+  `name` varchar(256) DEFAULT NULL,
+  `email` varchar(256) DEFAULT NULL,
+  `status` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `users` */
+
+insert  into `users`(`id`,`user_id`,`user_password`,`name`,`email`,`status`) values (1,'admin','a4300b002bcfb71f291dac175d52df94','Admin',NULL,9);
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
