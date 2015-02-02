@@ -3024,3 +3024,19 @@ div[data-role="editor-toolbar"] {
     cursor: pointer;
 }
 .practice li:hover{ border-color: #A9AD28;}
+
+#pagination_Ids {
+  margin: 15px 0;
+}#pagination_Ids a {
+  margin: 3px 2px;
+  padding: 3px 8px;
+}
+.cur_d { cursor: default;}
+input { outline: none !important;}
+#login_form .foot {
+  width: 100%;
+}#reg .modal-dialog {
+  left: 0;
+}#reg .input-group {
+  margin: 5px 0 10px;
+}

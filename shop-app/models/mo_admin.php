@@ -81,6 +81,25 @@
         return $query_result->row();
     }
     
+    public function getQue_cat($cat, $id){
+        $this->db->select('*');
+        $this->db->from('questions');
+        $this->db->where('category', $cat);
+        $this->db->where('id', $id);
+        $this->db->where('status', 1);
+        $query_result = $this->db->get();
+        return $query_result->row();
+    }
+    public function getQueIds_cat($cat){
+        $this->db->select('id');
+        $this->db->from('questions');
+        $this->db->where('status', 1);
+        $this->db->where('category', $cat);
+        $this->db->order_by('id', 'ASC');
+        $query_result = $this->db->get();
+        return $query_result->result();
+    }
+    
     
     
 // ----------    Answer     ----------------    

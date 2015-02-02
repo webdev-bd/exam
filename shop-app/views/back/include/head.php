@@ -23,6 +23,7 @@
 <script src="<?php echo base_url();?>bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url();?>js/plugin/bootstrap-datepicker.js"></script>
 <script src="<?php echo base_url();?>js/plugin/chosen.jquery.min.js"></script>
+<script src="<?php echo base_url();?>js/admin/functions.js"></script>
 </head>        
  
 <body class="light-theme">

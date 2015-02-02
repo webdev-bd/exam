@@ -165,21 +165,27 @@ class Administrator extends CI_Controller {
     
     public function practice() {
         $data = $this->setup(array('title' => 'Practice'));
-        $data['question'] = $this->mo_admin->getPracticeQue();
-        $data['answers'] = $this->mo_admin->getAnswers($data['question']->id);
-
+        $data['categorys'] = $this->mo_admin->getCategorys();
         $data['page'] = $this->load->view('back/practice', $data, TRUE);
         $this->load->view('container', $data);
     }
+//    public function practice() {
+//        $data = $this->setup(array('title' => 'Practice'));
+//        $data['question'] = $this->mo_admin->getPracticeQue();
+//        $data['answers'] = $this->mo_admin->getAnswers($data['question']->id);
+//
+//        $data['page'] = $this->load->view('back/practice', $data, TRUE);
+//        $this->load->view('container', $data);
+//    }
     public function practice_check() {
         $answers = $this->mo_admin->getPracticeCheck($this->input->post('id'));
-        $html ='';
-        foreach ($answers as $item):
-                $right = ($item->id==$this->input->post('ans')) ? 'border: 1px solid red; color:green;'  : '';
-                $right = ($item->status==1) ? 'border: 1px solid green;'  : $right;
-                $html .="<li class='practiceAns' style='cursor: default; {$right}'>{$item->answer}</li>";
-        endforeach;      
-        echo $html;
+        $output = array();
+        foreach ($answers as $item){
+            $output[$item->id] = $item->status;
+        }
+        $output = (Object) $output;
+        echo json_encode($output);
+        die;
     }
     
     

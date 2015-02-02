@@ -13,7 +13,7 @@ if(!empty($_GET)){
         </div>
   
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <div class="block-web">
                     <div class="header">
                         <h3 class="content-header"><?php echo (!empty($title)) ? $title : ''; ?></h3>
